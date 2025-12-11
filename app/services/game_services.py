@@ -10,16 +10,23 @@ from app.schema import PlayerOut, RandomPlayersResponse, VerifyRequest, VerifyRe
 class GameService:
     @staticmethod
     async def get_two_random_players(session: AsyncSession) -> RandomPlayersResponse:
-        query = select(Player).order_by(func.random()).limit(2)
-        result = await session.execute(query)
-        players = result.scalars().all()
+        # Select two random IDs first (fast)
+        id_query = select(Player.id).order_by(func.random()).limit(2)
+        id_result = await session.execute(id_query)
+        ids = id_result.scalars().all()
 
-        if len(players) < 2:
+        if len(ids) < 2:
             raise ValueError("Not enough players in the database")
+
+        # Now fetch those players
+        player_query = select(Player).where(Player.id.in_(ids))
+        result = await session.execute(player_query)
+        players = result.scalars().all()
 
         return RandomPlayersResponse(
             players=[GameService._to_player_out(p) for p in players]
         )
+
 
     @staticmethod
     async def verify_guess(session: AsyncSession, payload: VerifyRequest) -> VerifyResponse:

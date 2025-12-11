@@ -5,6 +5,7 @@ import time
 from contextlib import asynccontextmanager
 from pathlib import Path
 from typing import AsyncGenerator, List
+import random
 
 from fastapi import Depends, FastAPI, HTTPException, Query
 from fastapi.middleware.cors import CORSMiddleware
@@ -80,13 +81,7 @@ async def request_timing_middleware(request, call_next):
     )
     return response
 
-@app.head("/")
-async def root_head():
-    return
 
-@app.get("/")
-async def root():
-    return {"status": "ok"}
 
 @app.get("/health", response_model=HealthResponse)
 async def health_check() -> HealthResponse:
