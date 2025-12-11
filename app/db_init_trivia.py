@@ -6,7 +6,7 @@ Run this script once to populate the questions table.
 import asyncio
 from sqlalchemy import insert
 
-from app.db import engine, Base, Question, async_session_maker
+from .db import engine, Base, Question, async_session_maker
 
 
 SAMPLE_QUESTIONS = [

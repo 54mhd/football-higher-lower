@@ -11,10 +11,10 @@ from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import FileResponse, HTMLResponse
 from sqlalchemy.ext.asyncio import AsyncSession
 
-from app.db import get_async_session,create_db_and_tables
-from app.db_init import init_db
-from app.db_init_trivia import seed_questions
-from app.schema import (
+from .db import get_async_session,create_db_and_tables
+from .db_init import init_db
+from .db_init_trivia import seed_questions
+from .schema import (
     CountResponse,
     HealthResponse,
     RandomPlayersResponse,
@@ -24,8 +24,8 @@ from app.schema import (
     VerifyRequest,
     VerifyResponse,
 )
-from app.services.game_services import GameService
-from app.services.trivia_services import TriviaService
+from .services.game_services import GameService
+from .services.trivia_services import TriviaService
 
 
 logger = logging.getLogger(__name__)

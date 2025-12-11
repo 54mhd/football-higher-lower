@@ -1,8 +1,8 @@
 import asyncio
 from pathlib import Path
 
-from app.db import async_session_maker, create_db_and_tables
-from app.services.player_importer import import_players_from_csv
+from .db import async_session_maker, create_db_and_tables
+from .services.player_importer import import_players_from_csv
 
 
 async def init_db() -> None:
