@@ -1,0 +1,18 @@
+[project]
+name = "fastapi-tutorial"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "aiosqlite>=0.21.0",
+    "fastapi>=0.115.0",
+    "imagekitio>=4.2.0",
+    "python-dotenv>=1.2.1",
+    "sqlalchemy>=2.0.44",
+    "uvicorn[standard]>=0.38.0",
+    "gunicorn>=23.0.0",
+    "pytest>=8.0.0",
+    "pytest-asyncio>=0.23.0",
+    "httpx>=0.27.0",
+]

@@ -1,0 +1,261 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Play – Higher or Lower</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="min-h-screen bg-slate-950 text-slate-100 flex flex-col">
+    <header class="border-b border-slate-800 bg-slate-950/80 backdrop-blur sticky top-0 z-10">
+      <div class="max-w-5xl mx-auto px-4 py-4 flex items-center justify-between">
+        <a href="/" class="flex items-center gap-2">
+          <div class="h-8 w-8 rounded-xl bg-gradient-to-br from-emerald-400 to-sky-500 flex items-center justify-center text-slate-950 font-black text-xs">
+            HL
+          </div>
+          <div>
+            <h1 class="text-xl font-semibold tracking-tight">Higher or Lower</h1>
+            <p class="text-xs text-slate-400">Football Edition</p>
+          </div>
+        </a>
+        <div class="flex items-center gap-3 text-xs text-slate-400">
+          <span class="inline-flex h-2 w-2 rounded-full bg-emerald-400 animate-pulse"></span>
+          <span>In game</span>
+        </div>
+      </div>
+    </header>
+
+    <main class="flex-1 flex items-center justify-center px-4 pb-10 pt-6">
+      <div class="w-full max-w-5xl space-y-4">
+        <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-3">
+          <div id="score" class="text-lg font-semibold text-emerald-400">Score: 0</div>
+          <div id="status" class="text-sm text-slate-300 min-h-[1.5rem]"></div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6" id="cards-container">
+          <!-- LEFT CARD -->
+          <article
+            id="card-left"
+            class="group relative rounded-3xl border border-slate-800 bg-slate-900/80 overflow-hidden cursor-pointer shadow-lg shadow-emerald-500/10 transition hover:-translate-y-1 hover:shadow-emerald-500/25"
+          >
+            <div class="relative h-80 w-full">
+              <img
+                id="img-left"
+                src=""
+                alt="Player left"
+                class="h-full w-full object-cover"
+              />
+              <div class="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/20 to-transparent"></div>
+              <div class="absolute bottom-0 left-0 right-0 p-4 flex items-end justify-between gap-2">
+                <div>
+                  <p class="text-[11px] uppercase tracking-[0.2em] text-slate-400">Player A</p>
+                  <h3 id="name-left" class="text-lg font-semibold tracking-tight">Player A</h3>
+                </div>
+                <div class="text-right">
+                  <p class="text-[11px] text-slate-400">Market value (USD)</p>
+                  <p id="value-left" class="font-mono font-semibold text-base">?</p>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- RIGHT CARD -->
+          <article
+            id="card-right"
+            class="group relative rounded-3xl border border-slate-800 bg-slate-900/80 overflow-hidden cursor-pointer shadow-lg shadow-sky-500/10 transition hover:-translate-y-1 hover:shadow-sky-500/25"
+          >
+            <div class="relative h-80 w-full">
+              <img
+                id="img-right"
+                src=""
+                alt="Player right"
+                class="h-full w-full object-cover"
+              />
+              <div class="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/20 to-transparent"></div>
+              <div class="absolute bottom-0 left-0 right-0 p-4 flex items-end justify-between gap-2">
+                <div>
+                  <p class="text-[11px] uppercase tracking-[0.2em] text-slate-400">Player B</p>
+                  <h3 id="name-right" class="text-lg font-semibold tracking-tight">Player B</h3>
+                </div>
+                <div class="text-right">
+                  <p class="text-[11px] text-slate-400">Market value (USD)</p>
+                  <p id="value-right" class="font-mono font-semibold text-base">?</p>
+                </div>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <div class="flex items-center justify-between text-xs text-slate-500 mt-2">
+          <span>After each guess, the real values will appear on the cards.</span>
+          <button
+            id="refresh"
+            class="inline-flex items-center gap-1 rounded-full border border-slate-700 px-3 py-1 text-[11px] font-medium hover:border-slate-500 hover:bg-slate-900 transition"
+          >
+            <span class="h-1.5 w-1.5 rounded-full bg-emerald-400"></span>
+            New players
+          </button>
+        </div>
+      </div>
+    </main>
+
+    <footer class="border-t border-slate-800 bg-slate-950/90">
+      <div class="max-w-5xl mx-auto px-4 py-4 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 text-xs text-slate-400">
+        <div>
+          <p class="font-medium text-slate-200">Student project · Higher or Lower – Football Edition</p>
+          <p class="mt-1 max-w-xl">
+            Gameplay page built with FastAPI backend and a Tailwind CSS interface.
+          </p>
+        </div>
+        <div class="text-right space-y-1">
+          <p class="text-[11px] uppercase tracking-[0.18em] text-slate-500">About</p>
+          <p>Student of <span class="font-medium text-slate-200">UFAZ Baku</span></p>
+          <p class="text-slate-500">French-Azerbaijani University · Baku</p>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      const API_BASE = '';
+
+      let currentPlayers = null;
+      let score = 0;
+      let isLocked = false;
+
+      const scoreEl = document.getElementById('score');
+      const statusEl = document.getElementById('status');
+
+      const nameLeft = document.getElementById('name-left');
+      const nameRight = document.getElementById('name-right');
+      const imgLeft = document.getElementById('img-left');
+      const imgRight = document.getElementById('img-right');
+      const valueLeft = document.getElementById('value-left');
+      const valueRight = document.getElementById('value-right');
+
+      const cardLeft = document.getElementById('card-left');
+      const cardRight = document.getElementById('card-right');
+      const refreshBtn = document.getElementById('refresh');
+
+      function clearHighlights() {
+        const classes = ['ring-2', 'ring-emerald-500', 'ring-red-500', 'ring-offset-2', 'ring-offset-slate-950'];
+        cardLeft.classList.remove(...classes);
+        cardRight.classList.remove(...classes);
+        statusEl.classList.remove('text-emerald-400', 'text-red-400');
+      }
+
+      function formatCurrency(value) {
+        const num = (Number(value) || 0) * 1_000_000;
+        return new Intl.NumberFormat('en-US', {
+          style: 'currency',
+          currency: 'USD',
+          maximumFractionDigits: 0,
+        }).format(num);
+      }
+
+      async function fetchRandomPlayers() {
+        lockUI(true);
+        clearHighlights();
+        statusEl.textContent = 'Loading players...';
+
+        try {
+          const res = await fetch(`${API_BASE}/api/player/random`);
+          if (!res.ok) {
+            throw new Error(`API error: ${res.status}`);
+          }
+          const data = await res.json();
+          if (!data.players || data.players.length !== 2) {
+            throw new Error('Unexpected response format');
+          }
+          currentPlayers = data.players;
+          renderPlayers();
+          statusEl.textContent = 'Choose the player you think has the higher value.';
+        } catch (err) {
+          console.error(err);
+          statusEl.textContent = 'Failed to load players.';
+          statusEl.classList.add('text-red-400');
+        } finally {
+          lockUI(false);
+        }
+      }
+
+      function renderPlayers() {
+        const [left, right] = currentPlayers;
+        nameLeft.textContent = left.name;
+        nameRight.textContent = right.name;
+        imgLeft.src = left.image_url;
+        imgRight.src = right.image_url;
+        valueLeft.textContent = '?';
+        valueRight.textContent = '?';
+      }
+
+      function lockUI(locked) {
+        isLocked = locked;
+        const method = locked ? 'add' : 'remove';
+        [cardLeft, cardRight].forEach((card) => {
+          card.classList[method]('opacity-60', 'pointer-events-none');
+        });
+      }
+
+      async function sendGuess(guess) {
+        if (!currentPlayers || isLocked) return;
+        lockUI(true);
+        clearHighlights();
+        statusEl.textContent = 'Checking your guess...';
+
+        const [left, right] = currentPlayers;
+        const selectedCard = guess === 'left' ? cardLeft : cardRight;
+        const otherCard = guess === 'left' ? cardRight : cardLeft;
+
+        try {
+          const res = await fetch(`${API_BASE}/api/game/verify`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              player_left_id: left.id,
+              player_right_id: right.id,
+              guess: guess,
+            }),
+          });
+          if (!res.ok) {
+            throw new Error(`API error: ${res.status}`);
+          }
+          const data = await res.json();
+
+          valueLeft.textContent = formatCurrency(data.left_value);
+          valueRight.textContent = formatCurrency(data.right_value);
+
+          if (data.correct) {
+            score += 1;
+            statusEl.textContent = 'Correct! Well done.';
+            statusEl.classList.add('text-emerald-400');
+            selectedCard.classList.add('ring-2', 'ring-emerald-500', 'ring-offset-2', 'ring-offset-slate-950');
+          } else {
+            statusEl.textContent = 'Wrong choice. Score has been reset.';
+            statusEl.classList.add('text-red-400');
+            score = 0;
+            selectedCard.classList.add('ring-2', 'ring-red-500', 'ring-offset-2', 'ring-offset-slate-950');
+            otherCard.classList.add('ring-2', 'ring-emerald-500', 'ring-offset-2', 'ring-offset-slate-950');
+          }
+          scoreEl.textContent = `Score: ${score}`;
+
+          setTimeout(fetchRandomPlayers, 1300);
+        } catch (err) {
+          console.error(err);
+          statusEl.textContent = 'Failed to verify guess.';
+          statusEl.classList.add('text-red-400');
+          lockUI(false);
+        }
+      }
+
+      cardLeft.addEventListener('click', () => sendGuess('left'));
+      cardRight.addEventListener('click', () => sendGuess('right'));
+      refreshBtn.addEventListener('click', () => {
+        score = 0;
+        scoreEl.textContent = 'Score: 0';
+        fetchRandomPlayers();
+      });
+
+      fetchRandomPlayers();
+    </script>
+  </body>
+</html>

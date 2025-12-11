@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Higher or Lower – Football Edition</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="min-h-screen bg-slate-950 text-slate-100 flex flex-col">
+    <header class="border-b border-slate-800 bg-slate-950/80 backdrop-blur">
+      <div class="max-w-5xl mx-auto px-4 py-4 flex items-center justify-between">
+        <div class="flex items-center gap-2">
+          <div class="h-8 w-8 rounded-xl bg-gradient-to-br from-emerald-400 to-sky-500 flex items-center justify-center text-slate-950 font-black text-xs">
+            HL
+          </div>
+          <div>
+            <p class="text-xs uppercase tracking-[0.18em] text-slate-500">Higher or Lower</p>
+            <p class="text-[11px] text-slate-500">Football Edition · FastAPI project</p>
+          </div>
+        </div>
+        <a href="/game" class="hidden sm:inline-flex items-center gap-2 rounded-full border border-emerald-500/50 bg-emerald-500/10 px-3 py-1 text-[11px] font-medium text-emerald-300 hover:bg-emerald-500/20 transition">
+          Play now
+          <span class="text-sm">→</span>
+        </a>
+      </div>
+    </header>
+
+    <main class="flex-1 flex items-center justify-center px-4 py-10">
+      <div class="max-w-4xl w-full grid gap-10 md:grid-cols-[minmax(0,3fr)_minmax(0,2fr)] items-center">
+        <section class="space-y-6">
+          <div class="inline-flex items-center gap-2 rounded-full border border-emerald-500/40 bg-emerald-500/10 px-3 py-1 text-xs text-emerald-300 mb-2">
+            <span class="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+            <span>FastAPI · SQLite · Football stats</span>
+          </div>
+          <div>
+            <h1 class="text-3xl md:text-4xl font-semibold tracking-tight mb-2">Higher or Lower – Football Edition</h1>
+            <p class="text-slate-300 text-sm md:text-base max-w-xl">
+              Guess which football player has the higher statistic. Two players, one number –
+              click on the card you believe has the higher value and try to build the longest streak.
+            </p>
+          </div>
+          <div class="flex flex-wrap items-center gap-3 text-xs text-slate-400">
+            <span class="inline-flex items-center gap-1 rounded-full border border-slate-700 px-3 py-1">
+              <span class="h-1.5 w-1.5 rounded-full bg-sky-400"></span>
+              Built with FastAPI
+            </span>
+            <span class="inline-flex items-center gap-1 rounded-full border border-slate-700 px-3 py-1">
+              <span class="h-1.5 w-1.5 rounded-full bg-emerald-400"></span>
+              Async SQLite + SQLAlchemy
+            </span>
+            <span class="inline-flex items-center gap-1 rounded-full border border-slate-700 px-3 py-1">
+              <span class="h-1.5 w-1.5 rounded-full bg-fuchsia-400"></span>
+              Tailwind UI
+            </span>
+          </div>
+          <div class="flex flex-wrap items-center gap-4 pt-2">
+            <a
+              href="/game"
+              class="inline-flex items-center gap-2 rounded-full bg-emerald-500 px-5 py-2.5 text-sm font-semibold text-slate-950 shadow shadow-emerald-500/30 hover:bg-emerald-400 transition"
+            >
+              Start game
+              <span class="text-lg">→</span>
+            </a>
+            <p class="text-xs text-slate-400">No login, no ads – just quick football trivia.</p>
+          </div>
+        </section>
+
+        <aside class="relative h-64 md:h-80 rounded-3xl border border-slate-800 bg-gradient-to-br from-slate-900 via-slate-950 to-slate-900 overflow-hidden shadow-xl shadow-emerald-500/20">
+          <div class="absolute inset-0 bg-[radial-gradient(circle_at_top,_#22c55e33,_transparent_55%),_radial-gradient(circle_at_bottom,_#0ea5e933,_transparent_55%)]"></div>
+          <div class="relative h-full w-full flex items-center justify-center px-6">
+            <div class="grid grid-cols-2 gap-4 w-full max-w-md">
+              <div class="rounded-2xl bg-slate-900/80 border border-slate-700/60 p-3 flex flex-col gap-2">
+                <div class="h-20 rounded-xl bg-gradient-to-tr from-emerald-500/40 to-emerald-300/10 mb-1"></div>
+                <div class="h-2 w-20 rounded bg-slate-600/70 mb-1"></div>
+                <div class="h-2 w-12 rounded bg-slate-700/70"></div>
+              </div>
+              <div class="rounded-2xl bg-slate-900/80 border border-slate-700/60 p-3 flex flex-col gap-2 translate-y-5">
+                <div class="h-20 rounded-xl bg-gradient-to-tr from-sky-500/40 to-sky-300/10 mb-1"></div>
+                <div class="h-2 w-20 rounded bg-slate-600/70 mb-1"></div>
+                <div class="h-2 w-12 rounded bg-slate-700/70"></div>
+              </div>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </main>
+
+    <footer class="border-t border-slate-800 bg-slate-950/90">
+      <div class="max-w-5xl mx-auto px-4 py-4 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 text-xs text-slate-400">
+        <div>
+          <p class="font-medium text-slate-200">Student project · Higher or Lower – Football Edition</p>
+          <p class="mt-1 max-w-xl">
+            Developed as a university assignment using FastAPI, SQLite and modern web UI.
+          </p>
+        </div>
+        <div class="text-right space-y-1">
+          <p class="text-[11px] uppercase tracking-[0.18em] text-slate-500">About</p>
+          <p>Student of <span class="font-medium text-slate-200">UFAZ Baku</span></p>
+          <p class="text-slate-500">French-Azerbaijani University · Baku</p>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
