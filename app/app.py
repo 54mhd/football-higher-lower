@@ -97,7 +97,7 @@ async def index() -> HTMLResponse:
     return HTMLResponse(content=html)
 
 
-@app.get("/game", response_class=HTMLResponse)
+@app.get("/games", response_class=HTMLResponse)
 async def game_page() -> HTMLResponse:
     root = Path(__file__).resolve().parents[1]
     frontend_path = root / "game.html"
@@ -131,7 +131,7 @@ async def get_random_players(
         raise HTTPException(status_code=400, detail=str(exc)) from exc
 
 
-@app.post("/api/game/verify", response_model=VerifyResponse)
+@app.post("/api/games/verify", response_model=VerifyResponse)
 async def verify_game(
     payload: VerifyRequest,
     session: AsyncSession = Depends(get_async_session),
