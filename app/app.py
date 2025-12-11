@@ -84,6 +84,10 @@ async def request_timing_middleware(request, call_next):
 async def root_head():
     return
 
+@app.get("/")
+async def root():
+    return {"status": "ok"}
+
 @app.get("/health", response_model=HealthResponse)
 async def health_check() -> HealthResponse:
     return HealthResponse(status="ok")
