@@ -4,7 +4,7 @@ from httpx import ASGITransport, AsyncClient
 from sqlalchemy import select
 from sqlalchemy.ext.asyncio import AsyncSession, async_sessionmaker, create_async_engine
 
-from app.main import app
+from app.app import app
 from app.db import Base, Player, Question, get_async_session
 from app.services.trivia_services import TriviaService
 from app.schema import TriviaVerifyRequest
