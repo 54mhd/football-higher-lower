@@ -97,7 +97,7 @@ async def index() -> HTMLResponse:
     return HTMLResponse(content=html)
 
 
-@app.get("/game", response_class=HTMLResponse)
+@app.get("/games", response_class=HTMLResponse)
 async def game_page() -> HTMLResponse:
     root = Path(__file__).resolve().parents[1]
     frontend_path = root / "game.html"
