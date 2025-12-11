@@ -9,7 +9,7 @@ async def init_db() -> None:
     await create_db_and_tables()
 
     root = Path(__file__).resolve().parents[1]
-    csv_path = root / "db" / "players_source.csv"
+    csv_path = root / "app" / "db" / "players_source.csv"
 
     async with async_session_maker() as session:
         await import_players_from_csv(session, csv_path)

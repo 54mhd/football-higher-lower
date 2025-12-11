@@ -2,15 +2,18 @@
 
 import logging
 import time
+from contextlib import asynccontextmanager
 from pathlib import Path
-from typing import List
+from typing import AsyncGenerator, List
 
 from fastapi import Depends, FastAPI, HTTPException, Query
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import FileResponse, HTMLResponse
 from sqlalchemy.ext.asyncio import AsyncSession
 
-from app.db import get_async_session
+from app.db import get_async_session,create_db_and_tables
+from app.db_init import init_db
+from app.db_init_trivia import seed_questions
 from app.schema import (
     CountResponse,
     HealthResponse,
@@ -28,7 +31,28 @@ from app.services.trivia_services import TriviaService
 logger = logging.getLogger(__name__)
 
 
-app = FastAPI(title="Higher or Lower - Football Edition")
+@asynccontextmanager
+async def lifespan(app: FastAPI) -> AsyncGenerator:
+    # Startup - Initialize database with players and questions
+    logger.info("Initializing database...")
+    try:
+        await init_db()
+        logger.info("Players imported successfully")
+    except Exception as e:
+        logger.error(f"Error importing players: {e}")
+    
+    try:
+        await seed_questions()
+        logger.info("Questions seeded successfully")
+    except Exception as e:
+        logger.error(f"Error seeding questions: {e}")
+    
+    yield
+    # Shutdown
+    logger.info("Application shutting down")
+
+
+app = FastAPI(title="Higher or Lower - Football Edition", lifespan=lifespan)
 
 
 app.add_middleware(
@@ -38,7 +62,6 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
-
 
 @app.middleware("http")
 async def request_timing_middleware(request, call_next):
