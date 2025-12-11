@@ -954,491 +954,969 @@ SAMPLE_QUESTIONS = [
         "difficulty": "hard",
         "category": "Copa America",
     },
-    [
-  {
-    "question_text": "Which country won the FIFA World Cup in 1998?",
-    "option_a": "Brazil",
-    "option_b": "France",
-    "option_c": "Germany",
-    "option_d": "Argentina",
-    "correct_answer": "B",
-    "difficulty": "easy",
-    "category": "World Cup"
-  },
-  {
-    "question_text": "Who scored the most goals at the 2002 FIFA World Cup?",
-    "option_a": "Ronaldo Nazário",
-    "option_b": "Miroslav Klose",
-    "option_c": "Rivaldo",
-    "option_d": "Ronaldinho",
-    "correct_answer": "A",
-    "difficulty": "medium",
-    "category": "World Cup"
-  },
-  {
-    "question_text": "Which club is nicknamed 'Los Blancos'?",
-    "option_a": "Barcelona",
-    "option_b": "Real Madrid",
-    "option_c": "Valencia",
-    "option_d": "Atletico Madrid",
-    "correct_answer": "B",
-    "difficulty": "easy",
-    "category": "Clubs"
-  },
-  {
-    "question_text": "How long is extra time in a knockout football match (without penalties)?",
-    "option_a": "20 minutes",
-    "option_b": "25 minutes",
-    "option_c": "30 minutes",
-    "option_d": "35 minutes",
-    "correct_answer": "C",
-    "difficulty": "easy",
-    "category": "Rules"
-  },
-  {
-    "question_text": "Which country won the UEFA Euro 2004?",
-    "option_a": "Portugal",
-    "option_b": "Greece",
-    "option_c": "France",
-    "option_d": "Italy",
-    "correct_answer": "B",
-    "difficulty": "medium",
-    "category": "Euro Cup"
-  },
-  {
-    "question_text": "Which club did Thierry Henry play for before joining Arsenal?",
-    "option_a": "Monaco",
-    "option_b": "Juventus",
-    "option_c": "Barcelona",
-    "option_d": "Lyon",
-    "correct_answer": "B",
-    "difficulty": "medium",
-    "category": "Transfers"
-  },
-  {
-    "question_text": "Which team won the UEFA Champions League in 2006?",
-    "option_a": "Barcelona",
-    "option_b": "Arsenal",
-    "option_c": "AC Milan",
-    "option_d": "Liverpool",
-    "correct_answer": "A",
-    "difficulty": "medium",
-    "category": "Champions League"
-  },
-  {
-    "question_text": "Which German club is known as 'Die Schwarzgelben' (The Black and Yellows)?",
-    "option_a": "Bayern Munich",
-    "option_b": "Borussia Dortmund",
-    "option_c": "Bayer Leverkusen",
-    "option_d": "Schalke 04",
-    "correct_answer": "B",
-    "difficulty": "easy",
-    "category": "Bundesliga"
-  },
-  {
-    "question_text": "What is given to a player who receives two yellow cards in a single match?",
-    "option_a": "Nothing",
-    "option_b": "A red card",
-    "option_c": "A blue card",
-    "option_d": "A penalty kick",
-    "correct_answer": "B",
-    "difficulty": "easy",
-    "category": "Rules"
-  },
-  {
-    "question_text": "Which country hosted the 2002 FIFA World Cup together with South Korea?",
-    "option_a": "Japan",
-    "option_b": "China",
-    "option_c": "Thailand",
-    "option_d": "Australia",
-    "correct_answer": "A",
-    "difficulty": "easy",
-    "category": "World Cup"
-  },
-  {
-    "question_text": "Who is the all-time top scorer of the FIFA World Cup?",
-    "option_a": "Pelé",
-    "option_b": "Ronaldo Nazário",
-    "option_c": "Miroslav Klose",
-    "option_d": "Gerd Müller",
-    "correct_answer": "C",
-    "difficulty": "medium",
-    "category": "World Cup"
-  },
-  {
-    "question_text": "Which position usually wears the number 1 jersey?",
-    "option_a": "Centre-back",
-    "option_b": "Goalkeeper",
-    "option_c": "Striker",
-    "option_d": "Left winger",
-    "correct_answer": "B",
-    "difficulty": "easy",
-    "category": "Positions"
-  },
-  {
-    "question_text": "Which Italian club is nicknamed 'La Vecchia Signora'?",
-    "option_a": "AC Milan",
-    "option_b": "Inter Milan",
-    "option_c": "Juventus",
-    "option_d": "Roma",
-    "correct_answer": "C",
-    "difficulty": "easy",
-    "category": "Serie A"
-  },
-  {
-    "question_text": "Who was the captain of Spain when they won the 2010 World Cup?",
-    "option_a": "Xavi",
-    "option_b": "Casillas",
-    "option_c": "Puyol",
-    "option_d": "Iniesta",
-    "correct_answer": "B",
-    "difficulty": "medium",
-    "category": "World Cup"
-  },
-  {
-    "question_text": "Which team did José Mourinho manage when he first won the Champions League?",
-    "option_a": "Porto",
-    "option_b": "Chelsea",
-    "option_c": "Inter Milan",
-    "option_d": "Real Madrid",
-    "correct_answer": "A",
-    "difficulty": "medium",
-    "category": "Coaches"
-  },
-  {
-    "question_text": "Which country won the UEFA Euro 2008?",
-    "option_a": "Spain",
-    "option_b": "Germany",
-    "option_c": "Italy",
-    "option_d": "Netherlands",
-    "correct_answer": "A",
-    "difficulty": "easy",
-    "category": "Euro Cup"
-  },
-  {
-    "question_text": "Which club is famous for the motto 'Més que un club'?",
-    "option_a": "Real Madrid",
-    "option_b": "Barcelona",
-    "option_c": "Atletico Madrid",
-    "option_d": "Sevilla",
-    "correct_answer": "B",
-    "difficulty": "easy",
-    "category": "Clubs"
-  },
-  {
-    "question_text": "Which player scored the winning goal in the UEFA Euro 2016 final?",
-    "option_a": "Cristiano Ronaldo",
-    "option_b": "Eder",
-    "option_c": "Nani",
-    "option_d": "Griezmann",
-    "correct_answer": "B",
-    "difficulty": "medium",
-    "category": "Euro Cup"
-  },
-  {
-    "question_text": "Which country has the nickname 'Seleção'?",
-    "option_a": "Brazil",
-    "option_b": "Portugal",
-    "option_c": "Spain",
-    "option_d": "Mexico",
-    "correct_answer": "A",
-    "difficulty": "easy",
-    "category": "National Teams"
-  },
-  {
-    "question_text": "Which team did Pep Guardiola first coach at senior level?",
-    "option_a": "Barcelona B",
-    "option_b": "Barcelona",
-    "option_c": "Bayern Munich",
-    "option_d": "Manchester City",
-    "correct_answer": "A",
-    "difficulty": "hard",
-    "category": "Coaches"
-  },
-  {
-    "question_text": "Which club won the UEFA Champions League in 2012?",
-    "option_a": "Chelsea",
-    "option_b": "Bayern Munich",
-    "option_c": "Real Madrid",
-    "option_d": "Manchester United",
-    "correct_answer": "A",
-    "difficulty": "medium",
-    "category": "Champions League"
-  },
-  {
-    "question_text": "Which country hosted the 2014 FIFA World Cup?",
-    "option_a": "Brazil",
-    "option_b": "Germany",
-    "option_c": "South Africa",
-    "option_d": "Russia",
-    "correct_answer": "A",
-    "difficulty": "easy",
-    "category": "World Cup"
-  },
-  {
-    "question_text": "Which player is famous for the quote 'I don't believe skill was, or ever will be, the result of coaches.'?",
-    "option_a": "George Best",
-    "option_b": "Diego Maradona",
-    "option_c": "Johan Cruyff",
-    "option_d": "Eric Cantona",
-    "correct_answer": "A",
-    "difficulty": "hard",
-    "category": "History"
-  },
-  {
-    "question_text": "Which country won the Copa América in 2019?",
-    "option_a": "Argentina",
-    "option_b": "Brazil",
-    "option_c": "Chile",
-    "option_d": "Uruguay",
-    "correct_answer": "B",
-    "difficulty": "medium",
-    "category": "Copa America"
-  },
-  {
-    "question_text": "Which club plays its home matches at Anfield?",
-    "option_a": "Everton",
-    "option_b": "Liverpool",
-    "option_c": "Manchester United",
-    "option_d": "Leeds United",
-    "correct_answer": "B",
-    "difficulty": "easy",
-    "category": "Stadiums"
-  },
-  {
-    "question_text": "Who won the Golden Ball (best player) at the 2014 World Cup?",
-    "option_a": "Messi",
-    "option_b": "Robben",
-    "option_c": "James Rodríguez",
-    "option_d": "Thomas Müller",
-    "correct_answer": "A",
-    "difficulty": "medium",
-    "category": "World Cup"
-  },
-  {
-    "question_text": "Which position is mainly responsible for organizing play and creating chances?",
-    "option_a": "Centre-back",
-    "option_b": "Goalkeeper",
-    "option_c": "Playmaker/Attacking midfielder",
-    "option_d": "Full-back",
-    "correct_answer": "C",
-    "difficulty": "easy",
-    "category": "Positions"
-  },
-  {
-    "question_text": "Which country did Zinedine Zidane represent at international level?",
-    "option_a": "Algeria",
-    "option_b": "France",
-    "option_c": "Morocco",
-    "option_d": "Spain",
-    "correct_answer": "B",
-    "difficulty": "easy",
-    "category": "Players"
-  },
-  {
-    "question_text": "Which club did Kaka play for before joining Real Madrid in 2009?",
-    "option_a": "AC Milan",
-    "option_b": "Inter Milan",
-    "option_c": "Roma",
-    "option_d": "Juventus",
-    "correct_answer": "A",
-    "difficulty": "easy",
-    "category": "Transfers"
-  },
-  {
-    "question_text": "Which nation won the Africa Cup of Nations in 2010?",
-    "option_a": "Ghana",
-    "option_b": "Egypt",
-    "option_c": "Cameroon",
-    "option_d": "Nigeria",
-    "correct_answer": "B",
-    "difficulty": "hard",
-    "category": "AFCON"
-  },
-  {
-    "question_text": "Which player scored a hat-trick in the 2018 World Cup match Portugal vs Spain?",
-    "option_a": "Diego Costa",
-    "option_b": "Isco",
-    "option_c": "Cristiano Ronaldo",
-    "option_d": "Silva",
-    "correct_answer": "C",
-    "difficulty": "medium",
-    "category": "World Cup"
-  },
-  {
-    "question_text": "How many officials (including assistant referees) are usually on the pitch during a professional match?",
-    "option_a": "1",
-    "option_b": "2",
-    "option_c": "3",
-    "option_d": "4",
-    "correct_answer": "C",
-    "difficulty": "medium",
-    "category": "Rules"
-  },
-  {
-    "question_text": "Which country won the UEFA Euro 2020 (played in 2021)?",
-    "option_a": "Italy",
-    "option_b": "England",
-    "option_c": "Spain",
-    "option_d": "Belgium",
-    "correct_answer": "A",
-    "difficulty": "medium",
-    "category": "Euro Cup"
-  },
-  {
-    "question_text": "Which club is nicknamed 'Los Colchoneros'?",
-    "option_a": "Sevilla",
-    "option_b": "Valencia",
-    "option_c": "Atletico Madrid",
-    "option_d": "Villarreal",
-    "correct_answer": "C",
-    "difficulty": "medium",
-    "category": "La Liga"
-  },
-  {
-    "question_text": "Which country hosted the 1990 FIFA World Cup?",
-    "option_a": "Spain",
-    "option_b": "Italy",
-    "option_c": "Germany",
-    "option_d": "Mexico",
-    "correct_answer": "B",
-    "difficulty": "medium",
-    "category": "World Cup"
-  },
-  {
-    "question_text": "Which famous Brazilian club did Pelé play for most of his career?",
-    "option_a": "Flamengo",
-    "option_b": "Santos",
-    "option_c": "Corinthians",
-    "option_d": "São Paulo",
-    "correct_answer": "B",
-    "difficulty": "easy",
-    "category": "Clubs"
-  },
-  {
-    "question_text": "Who scored the winning goal for Germany in the 2014 World Cup final?",
-    "option_a": "Thomas Müller",
-    "option_b": "Miroslav Klose",
-    "option_c": "Mario Götze",
-    "option_d": "Mesut Özil",
-    "correct_answer": "C",
-    "difficulty": "medium",
-    "category": "World Cup"
-  },
-  {
-    "question_text": "Which country has the nickname 'Azzurri'?",
-    "option_a": "Italy",
-    "option_b": "France",
-    "option_c": "Argentina",
-    "option_d": "Portugal",
-    "correct_answer": "A",
-    "difficulty": "easy",
-    "category": "National Teams"
-  },
-  {
-    "question_text": "Which club did Erling Haaland play for before joining Borussia Dortmund?",
-    "option_a": "Molde",
-    "option_b": "RB Salzburg",
-    "option_c": "Leipzig",
-    "option_d": "Rosenborg",
-    "correct_answer": "B",
-    "difficulty": "medium",
-    "category": "Transfers"
-  },
-  {
-    "question_text": "Which French club is based in the city of Marseille?",
-    "option_a": "Lyon",
-    "option_b": "PSG",
-    "option_c": "Marseille",
-    "option_d": "Monaco",
-    "correct_answer": "C",
-    "difficulty": "easy",
-    "category": "Ligue 1"
-  },
-  {
-    "question_text": "Which player is often called 'The King of Rome' by fans?",
-    "option_a": "Daniele De Rossi",
-    "option_b": "Francesco Totti",
-    "option_c": "Gabriel Batistuta",
-    "option_d": "Radja Nainggolan",
-    "correct_answer": "B",
-    "difficulty": "medium",
-    "category": "Players"
-  },
-  {
-    "question_text": "Which team won the UEFA Champions League in 2015?",
-    "option_a": "Barcelona",
-    "option_b": "Juventus",
-    "option_c": "Real Madrid",
-    "option_d": "Bayern Munich",
-    "correct_answer": "A",
-    "difficulty": "medium",
-    "category": "Champions League"
-  },
-  {
-    "question_text": "What is the maximum number of players a team can have on the field after red cards before a match is abandoned?",
-    "option_a": "7",
-    "option_b": "8",
-    "option_c": "9",
-    "option_d": "10",
-    "correct_answer": "A",
-    "difficulty": "hard",
-    "category": "Rules"
-  },
-  {
-    "question_text": "Which country won the first FIFA World Cup in 1930?",
-    "option_a": "Brazil",
-    "option_b": "Uruguay",
-    "option_c": "Argentina",
-    "option_d": "Italy",
-    "correct_answer": "B",
-    "difficulty": "medium",
-    "category": "World Cup"
-  },
-  {
-    "question_text": "Which Spanish club is known as 'Los Nervionenses'?",
-    "option_a": "Sevilla",
-    "option_b": "Real Betis",
-    "option_c": "Valencia",
-    "option_d": "Villarreal",
-    "correct_answer": "A",
-    "difficulty": "hard",
-    "category": "La Liga"
-  },
-  {
-    "question_text": "Which player is nicknamed 'El Pistolero'?",
-    "option_a": "Luis Suárez",
-    "option_b": "Sergio Agüero",
-    "option_c": "Gonzalo Higuaín",
-    "option_d": "Edinson Cavani",
-    "correct_answer": "A",
-    "difficulty": "medium",
-    "category": "Players"
-  },
-  {
-    "question_text": "Which country won the FIFA Women's World Cup in 2015?",
-    "option_a": "USA",
-    "option_b": "Japan",
-    "option_c": "Germany",
-    "option_d": "France",
-    "correct_answer": "A",
-    "difficulty": "medium",
-    "category": "Women's Football"
-  },
-  {
-    "question_text": "Which famous stadium is located in Munich, Germany?",
-    "option_a": "Allianz Arena",
-    "option_b": "Signal Iduna Park",
-    "option_c": "Olympiastadion",
-    "option_d": "Veltins-Arena",
-    "correct_answer": "A",
-    "difficulty": "easy",
-    "category": "Stadiums"
-  }
-]
-
-
     
+    {
+        "question_text": "Which country won the FIFA World Cup in 1998?",
+        "option_a": "Brazil",
+        "option_b": "France",
+        "option_c": "Germany",
+        "option_d": "Argentina",
+        "correct_answer": "B",
+        "difficulty": "easy",
+        "category": "World Cup"
+    },
+    {
+        "question_text": "Who scored the most goals at the 2002 FIFA World Cup?",
+        "option_a": "Ronaldo Nazário",
+        "option_b": "Miroslav Klose",
+        "option_c": "Rivaldo",
+        "option_d": "Ronaldinho",
+        "correct_answer": "A",
+        "difficulty": "medium",
+        "category": "World Cup"
+    },
+    {
+        "question_text": "Which club is nicknamed 'Los Blancos'?",
+        "option_a": "Barcelona",
+        "option_b": "Real Madrid",
+        "option_c": "Valencia",
+        "option_d": "Atletico Madrid",
+        "correct_answer": "B",
+        "difficulty": "easy",
+        "category": "Clubs"
+    },
+    {
+        "question_text": "How long is extra time in a knockout football match (without penalties)?",
+        "option_a": "20 minutes",
+        "option_b": "25 minutes",
+        "option_c": "30 minutes",
+        "option_d": "35 minutes",
+        "correct_answer": "C",
+        "difficulty": "easy",
+        "category": "Rules"
+    },
+    {
+        "question_text": "Which country won the UEFA Euro 2004?",
+        "option_a": "Portugal",
+        "option_b": "Greece",
+        "option_c": "France",
+        "option_d": "Italy",
+        "correct_answer": "B",
+        "difficulty": "medium",
+        "category": "Euro Cup"
+    },
+    {
+        "question_text": "Which club did Thierry Henry play for before joining Arsenal?",
+        "option_a": "Monaco",
+        "option_b": "Juventus",
+        "option_c": "Barcelona",
+        "option_d": "Lyon",
+        "correct_answer": "B",
+        "difficulty": "medium",
+        "category": "Transfers"
+    },
+    {
+        "question_text": "Which team won the UEFA Champions League in 2006?",
+        "option_a": "Barcelona",
+        "option_b": "Arsenal",
+        "option_c": "AC Milan",
+        "option_d": "Liverpool",
+        "correct_answer": "A",
+        "difficulty": "medium",
+        "category": "Champions League"
+    },
+    {
+        "question_text": "Which German club is known as 'Die Schwarzgelben' (The Black and Yellows)?",
+        "option_a": "Bayern Munich",
+        "option_b": "Borussia Dortmund",
+        "option_c": "Bayer Leverkusen",
+        "option_d": "Schalke 04",
+        "correct_answer": "B",
+        "difficulty": "easy",
+        "category": "Bundesliga"
+    },
+    {
+        "question_text": "What is given to a player who receives two yellow cards in a single match?",
+        "option_a": "Nothing",
+        "option_b": "A red card",
+        "option_c": "A blue card",
+        "option_d": "A penalty kick",
+        "correct_answer": "B",
+        "difficulty": "easy",
+        "category": "Rules"
+    },
+    {
+        "question_text": "Which country hosted the 2002 FIFA World Cup together with South Korea?",
+        "option_a": "Japan",
+        "option_b": "China",
+        "option_c": "Thailand",
+        "option_d": "Australia",
+        "correct_answer": "A",
+        "difficulty": "easy",
+        "category": "World Cup"
+    },
+    {
+        "question_text": "Who is the all-time top scorer of the FIFA World Cup?",
+        "option_a": "Pelé",
+        "option_b": "Ronaldo Nazário",
+        "option_c": "Miroslav Klose",
+        "option_d": "Gerd Müller",
+        "correct_answer": "C",
+        "difficulty": "medium",
+        "category": "World Cup"
+    },
+    {
+        "question_text": "Which position usually wears the number 1 jersey?",
+        "option_a": "Centre-back",
+        "option_b": "Goalkeeper",
+        "option_c": "Striker",
+        "option_d": "Left winger",
+        "correct_answer": "B",
+        "difficulty": "easy",
+        "category": "Positions"
+    },
+    {
+        "question_text": "Which Italian club is nicknamed 'La Vecchia Signora'?",
+        "option_a": "AC Milan",
+        "option_b": "Inter Milan",
+        "option_c": "Juventus",
+        "option_d": "Roma",
+        "correct_answer": "C",
+        "difficulty": "easy",
+        "category": "Serie A"
+    },
+    {
+        "question_text": "Who was the captain of Spain when they won the 2010 World Cup?",
+        "option_a": "Xavi",
+        "option_b": "Casillas",
+        "option_c": "Puyol",
+        "option_d": "Iniesta",
+        "correct_answer": "B",
+        "difficulty": "medium",
+        "category": "World Cup"
+    },
+    {
+        "question_text": "Which team did José Mourinho manage when he first won the Champions League?",
+        "option_a": "Porto",
+        "option_b": "Chelsea",
+        "option_c": "Inter Milan",
+        "option_d": "Real Madrid",
+        "correct_answer": "A",
+        "difficulty": "medium",
+        "category": "Coaches"
+    },
+    {
+        "question_text": "Which country won the UEFA Euro 2008?",
+        "option_a": "Spain",
+        "option_b": "Germany",
+        "option_c": "Italy",
+        "option_d": "Netherlands",
+        "correct_answer": "A",
+        "difficulty": "easy",
+        "category": "Euro Cup"
+    },
+    {
+        "question_text": "Which club is famous for the motto 'Més que un club'?",
+        "option_a": "Real Madrid",
+        "option_b": "Barcelona",
+        "option_c": "Atletico Madrid",
+        "option_d": "Sevilla",
+        "correct_answer": "B",
+        "difficulty": "easy",
+        "category": "Clubs"
+    },
+    {
+        "question_text": "Which player scored the winning goal in the UEFA Euro 2016 final?",
+        "option_a": "Cristiano Ronaldo",
+        "option_b": "Eder",
+        "option_c": "Nani",
+        "option_d": "Griezmann",
+        "correct_answer": "B",
+        "difficulty": "medium",
+        "category": "Euro Cup"
+    },
+    {
+        "question_text": "Which country has the nickname 'Seleção'?",
+        "option_a": "Brazil",
+        "option_b": "Portugal",
+        "option_c": "Spain",
+        "option_d": "Mexico",
+        "correct_answer": "A",
+        "difficulty": "easy",
+        "category": "National Teams"
+    },
+    {
+        "question_text": "Which team did Pep Guardiola first coach at senior level?",
+        "option_a": "Barcelona B",
+        "option_b": "Barcelona",
+        "option_c": "Bayern Munich",
+        "option_d": "Manchester City",
+        "correct_answer": "A",
+        "difficulty": "hard",
+        "category": "Coaches"
+    },
+    {
+        "question_text": "Which club won the UEFA Champions League in 2012?",
+        "option_a": "Chelsea",
+        "option_b": "Bayern Munich",
+        "option_c": "Real Madrid",
+        "option_d": "Manchester United",
+        "correct_answer": "A",
+        "difficulty": "medium",
+        "category": "Champions League"
+    },
+    {
+        "question_text": "Which country hosted the 2014 FIFA World Cup?",
+        "option_a": "Brazil",
+        "option_b": "Germany",
+        "option_c": "South Africa",
+        "option_d": "Russia",
+        "correct_answer": "A",
+        "difficulty": "easy",
+        "category": "World Cup"
+    },
+    {
+        "question_text": "Which player is famous for the quote 'I don't believe skill was, or ever will be, the result of coaches.'?",
+        "option_a": "George Best",
+        "option_b": "Diego Maradona",
+        "option_c": "Johan Cruyff",
+        "option_d": "Eric Cantona",
+        "correct_answer": "A",
+        "difficulty": "hard",
+        "category": "History"
+    },
+    {
+        "question_text": "Which country won the Copa América in 2019?",
+        "option_a": "Argentina",
+        "option_b": "Brazil",
+        "option_c": "Chile",
+        "option_d": "Uruguay",
+        "correct_answer": "B",
+        "difficulty": "medium",
+        "category": "Copa America"
+    },
+    {
+        "question_text": "Which club plays its home matches at Anfield?",
+        "option_a": "Everton",
+        "option_b": "Liverpool",
+        "option_c": "Manchester United",
+        "option_d": "Leeds United",
+        "correct_answer": "B",
+        "difficulty": "easy",
+        "category": "Stadiums"
+    },
+    {
+        "question_text": "Who won the Golden Ball (best player) at the 2014 World Cup?",
+        "option_a": "Messi",
+        "option_b": "Robben",
+        "option_c": "James Rodríguez",
+        "option_d": "Thomas Müller",
+        "correct_answer": "A",
+        "difficulty": "medium",
+        "category": "World Cup"
+    },
+    {
+        "question_text": "Which position is mainly responsible for organizing play and creating chances?",
+        "option_a": "Centre-back",
+        "option_b": "Goalkeeper",
+        "option_c": "Playmaker/Attacking midfielder",
+        "option_d": "Full-back",
+        "correct_answer": "C",
+        "difficulty": "easy",
+        "category": "Positions"
+    },
+    {
+        "question_text": "Which country did Zinedine Zidane represent at international level?",
+        "option_a": "Algeria",
+        "option_b": "France",
+        "option_c": "Morocco",
+        "option_d": "Spain",
+        "correct_answer": "B",
+        "difficulty": "easy",
+        "category": "Players"
+    },
+    {
+        "question_text": "Which club did Kaka play for before joining Real Madrid in 2009?",
+        "option_a": "AC Milan",
+        "option_b": "Inter Milan",
+        "option_c": "Roma",
+        "option_d": "Juventus",
+        "correct_answer": "A",
+        "difficulty": "easy",
+        "category": "Transfers"
+    },
+    {
+        "question_text": "Which nation won the Africa Cup of Nations in 2010?",
+        "option_a": "Ghana",
+        "option_b": "Egypt",
+        "option_c": "Cameroon",
+        "option_d": "Nigeria",
+        "correct_answer": "B",
+        "difficulty": "hard",
+        "category": "AFCON"
+    },
+    {
+        "question_text": "Which player scored a hat-trick in the 2018 World Cup match Portugal vs Spain?",
+        "option_a": "Diego Costa",
+        "option_b": "Isco",
+        "option_c": "Cristiano Ronaldo",
+        "option_d": "Silva",
+        "correct_answer": "C",
+        "difficulty": "medium",
+        "category": "World Cup"
+    },
+    {
+        "question_text": "How many officials (including assistant referees) are usually on the pitch during a professional match?",
+        "option_a": "1",
+        "option_b": "2",
+        "option_c": "3",
+        "option_d": "4",
+        "correct_answer": "C",
+        "difficulty": "medium",
+        "category": "Rules"
+    },
+    {
+        "question_text": "Which country won the UEFA Euro 2020 (played in 2021)?",
+        "option_a": "Italy",
+        "option_b": "England",
+        "option_c": "Spain",
+        "option_d": "Belgium",
+        "correct_answer": "A",
+        "difficulty": "medium",
+        "category": "Euro Cup"
+    },
+    {
+        "question_text": "Which club is nicknamed 'Los Colchoneros'?",
+        "option_a": "Sevilla",
+        "option_b": "Valencia",
+        "option_c": "Atletico Madrid",
+        "option_d": "Villarreal",
+        "correct_answer": "C",
+        "difficulty": "medium",
+        "category": "La Liga"
+    },
+    {
+        "question_text": "Which country hosted the 1990 FIFA World Cup?",
+        "option_a": "Spain",
+        "option_b": "Italy",
+        "option_c": "Germany",
+        "option_d": "Mexico",
+        "correct_answer": "B",
+        "difficulty": "medium",
+        "category": "World Cup"
+    },
+    {
+        "question_text": "Which famous Brazilian club did Pelé play for most of his career?",
+        "option_a": "Flamengo",
+        "option_b": "Santos",
+        "option_c": "Corinthians",
+        "option_d": "São Paulo",
+        "correct_answer": "B",
+        "difficulty": "easy",
+        "category": "Clubs"
+    },
+    {
+        "question_text": "Who scored the winning goal for Germany in the 2014 World Cup final?",
+        "option_a": "Thomas Müller",
+        "option_b": "Miroslav Klose",
+        "option_c": "Mario Götze",
+        "option_d": "Mesut Özil",
+        "correct_answer": "C",
+        "difficulty": "medium",
+        "category": "World Cup"
+    },
+    {
+        "question_text": "Which country has the nickname 'Azzurri'?",
+        "option_a": "Italy",
+        "option_b": "France",
+        "option_c": "Argentina",
+        "option_d": "Portugal",
+        "correct_answer": "A",
+        "difficulty": "easy",
+        "category": "National Teams"
+    },
+    {
+        "question_text": "Which club did Erling Haaland play for before joining Borussia Dortmund?",
+        "option_a": "Molde",
+        "option_b": "RB Salzburg",
+        "option_c": "Leipzig",
+        "option_d": "Rosenborg",
+        "correct_answer": "B",
+        "difficulty": "medium",
+        "category": "Transfers"
+    },
+    {
+        "question_text": "Which French club is based in the city of Marseille?",
+        "option_a": "Lyon",
+        "option_b": "PSG",
+        "option_c": "Marseille",
+        "option_d": "Monaco",
+        "correct_answer": "C",
+        "difficulty": "easy",
+        "category": "Ligue 1"
+    },
+    {
+        "question_text": "Which player is often called 'The King of Rome' by fans?",
+        "option_a": "Daniele De Rossi",
+        "option_b": "Francesco Totti",
+        "option_c": "Gabriel Batistuta",
+        "option_d": "Radja Nainggolan",
+        "correct_answer": "B",
+        "difficulty": "medium",
+        "category": "Players"
+    },
+    {
+        "question_text": "Which team won the UEFA Champions League in 2015?",
+        "option_a": "Barcelona",
+        "option_b": "Juventus",
+        "option_c": "Real Madrid",
+        "option_d": "Bayern Munich",
+        "correct_answer": "A",
+        "difficulty": "medium",
+        "category": "Champions League"
+    },
+    {
+        "question_text": "What is the maximum number of players a team can have on the field after red cards before a match is abandoned?",
+        "option_a": "7",
+        "option_b": "8",
+        "option_c": "9",
+        "option_d": "10",
+        "correct_answer": "A",
+        "difficulty": "hard",
+        "category": "Rules"
+    },
+    {
+        "question_text": "Which country won the first FIFA World Cup in 1930?",
+        "option_a": "Brazil",
+        "option_b": "Uruguay",
+        "option_c": "Argentina",
+        "option_d": "Italy",
+        "correct_answer": "B",
+        "difficulty": "medium",
+        "category": "World Cup"
+    },
+    {
+        "question_text": "Which Spanish club is known as 'Los Nervionenses'?",
+        "option_a": "Sevilla",
+        "option_b": "Real Betis",
+        "option_c": "Valencia",
+        "option_d": "Villarreal",
+        "correct_answer": "A",
+        "difficulty": "hard",
+        "category": "La Liga"
+    },
+    {
+        "question_text": "Which player is nicknamed 'El Pistolero'?",
+        "option_a": "Luis Suárez",
+        "option_b": "Sergio Agüero",
+        "option_c": "Gonzalo Higuaín",
+        "option_d": "Edinson Cavani",
+        "correct_answer": "A",
+        "difficulty": "medium",
+        "category": "Players"
+    },
+    {
+        "question_text": "Which country won the FIFA Women's World Cup in 2015?",
+        "option_a": "USA",
+        "option_b": "Japan",
+        "option_c": "Germany",
+        "option_d": "France",
+        "correct_answer": "A",
+        "difficulty": "medium",
+        "category": "Women's Football"
+    },
+    {
+        "question_text": "Which famous stadium is located in Munich, Germany?",
+        "option_a": "Allianz Arena",
+        "option_b": "Signal Iduna Park",
+        "option_c": "Olympiastadion",
+        "option_d": "Veltins-Arena",
+        "correct_answer": "A",
+        "difficulty": "easy",
+        "category": "Stadiums"
+    }, 
+    {
+        "question_text": "Which country won the FIFA World Cup in 1974?",
+        "option_a": "Brazil",
+        "option_b": "Netherlands",
+        "option_c": "Germany",
+        "option_d": "Italy",
+        "correct_answer": "C",
+        "difficulty": "medium",
+        "category": "World Cup"
+        },
+        {
+        "question_text": "Which player is known as 'Il Capitano' at Roma?",
+        "option_a": "De Rossi",
+        "option_b": "Totti",
+        "option_c": "Nainggolan",
+        "option_d": "Pjanic",
+        "correct_answer": "B",
+        "difficulty": "easy",
+        "category": "Players"
+        },
+        {
+        "question_text": "Which team won the Champions League in 1999?",
+        "option_a": "Real Madrid",
+        "option_b": "Manchester United",
+        "option_c": "Juventus",
+        "option_d": "Bayern Munich",
+        "correct_answer": "B",
+        "difficulty": "medium",
+        "category": "Champions League"
+        },
+        {
+        "question_text": "Which club did Mohamed Salah play for before joining Liverpool?",
+        "option_a": "Chelsea",
+        "option_b": "Roma",
+        "option_c": "Basel",
+        "option_d": "Fiorentina",
+        "correct_answer": "B",
+        "difficulty": "easy",
+        "category": "Transfers"
+        },
+        {
+        "question_text": "Which country hosted the 1982 World Cup?",
+        "option_a": "Spain",
+        "option_b": "Argentina",
+        "option_c": "Mexico",
+        "option_d": "Italy",
+        "correct_answer": "A",
+        "difficulty": "medium",
+        "category": "World Cup"
+        },
+        {
+        "question_text": "Which African legend played for Chelsea and Marseille?",
+        "option_a": "Samuel Eto'o",
+        "option_b": "Didier Drogba",
+        "option_c": "Yaya Touré",
+        "option_d": "Michael Essien",
+        "correct_answer": "B",
+        "difficulty": "easy",
+        "category": "Players"
+        },
+        {
+        "question_text": "Which country won Euro 1996?",
+        "option_a": "Germany",
+        "option_b": "England",
+        "option_c": "France",
+        "option_d": "Portugal",
+        "correct_answer": "A",
+        "difficulty": "medium",
+        "category": "Euro Cup"
+        },
+        {
+        "question_text": "Which club is nicknamed 'The Canaries'?",
+        "option_a": "Norwich City",
+        "option_b": "Watford",
+        "option_c": "Sunderland",
+        "option_d": "Brighton",
+        "correct_answer": "A",
+        "difficulty": "easy",
+        "category": "Premier League"
+        },
+        {
+        "question_text": "Which player won the Golden Ball at the 2018 World Cup?",
+        "option_a": "Modrić",
+        "option_b": "Mbappé",
+        "option_c": "Griezmann",
+        "option_d": "Hazard",
+        "correct_answer": "A",
+        "difficulty": "medium",
+        "category": "World Cup"
+        },
+        {
+        "question_text": "Which country has the most Copa América titles?",
+        "option_a": "Argentina",
+        "option_b": "Brazil",
+        "option_c": "Uruguay",
+        "option_d": "Chile",
+        "correct_answer": "C",
+        "difficulty": "hard",
+        "category": "Copa America"
+        },
+        {
+        "question_text": "Which team won the Premier League in 2004 (Invincibles season)?",
+        "option_a": "Chelsea",
+        "option_b": "Arsenal",
+        "option_c": "Manchester United",
+        "option_d": "Liverpool",
+        "correct_answer": "B",
+        "difficulty": "easy",
+        "category": "Premier League"
+        },
+        {
+        "question_text": "Who scored the winning penalty for Argentina in the 2022 World Cup final shootout?",
+        "option_a": "Messi",
+        "option_b": "Dybala",
+        "option_c": "Montiel",
+        "option_d": "Enzo Fernández",
+        "correct_answer": "C",
+        "difficulty": "medium",
+        "category": "World Cup"
+        },
+        {
+        "question_text": "Which club is known as 'The Yellow Submarine'?",
+        "option_a": "Villarreal",
+        "option_b": "Cadiz",
+        "option_c": "Las Palmas",
+        "option_d": "Valencia",
+        "correct_answer": "A",
+        "difficulty": "easy",
+        "category": "La Liga"
+        },
+        {
+        "question_text": "What is the minimum width of a professional football goal?",
+        "option_a": "6 yards",
+        "option_b": "7 yards",
+        "option_c": "8 yards",
+        "option_d": "9 yards",
+        "correct_answer": "C",
+        "difficulty": "hard",
+        "category": "Rules"
+        },
+        {
+        "question_text": "Which Italian club is known as 'I Partenopei'?",
+        "option_a": "Napoli",
+        "option_b": "Inter Milan",
+        "option_c": "Roma",
+        "option_d": "Lazio",
+        "correct_answer": "A",
+        "difficulty": "medium",
+        "category": "Serie A"
+        },
+        {
+        "question_text": "Who won the Puskás Award in 2015?",
+        "option_a": "Messi",
+        "option_b": "Wendell Lira",
+        "option_c": "Zlatan Ibrahimović",
+        "option_d": "James Rodríguez",
+        "correct_answer": "B",
+        "difficulty": "hard",
+        "category": "Awards"
+        },
+        {
+        "question_text": "Which country reached the World Cup final in 1978 and 2010 but lost both?",
+        "option_a": "Netherlands",
+        "option_b": "France",
+        "option_c": "England",
+        "option_d": "Portugal",
+        "correct_answer": "A",
+        "difficulty": "medium",
+        "category": "World Cup"
+        },
+        {
+        "question_text": "Which team did Bayern Munich defeat 8-2 in the 2020 Champions League?",
+        "option_a": "Chelsea",
+        "option_b": "Atalanta",
+        "option_c": "Barcelona",
+        "option_d": "PSG",
+        "correct_answer": "C",
+        "difficulty": "easy",
+        "category": "Champions League"
+        },
+        {
+        "question_text": "Which country has won the most Olympic gold medals in men's football?",
+        "option_a": "Brazil",
+        "option_b": "Hungary",
+        "option_c": "Spain",
+        "option_d": "Argentina",
+        "correct_answer": "B",
+        "difficulty": "hard",
+        "category": "Olympics"
+        },
+        {
+        "question_text": "Which club did Andres Iniesta join after leaving Barcelona?",
+        "option_a": "Vissel Kobe",
+        "option_b": "Al Sadd",
+        "option_c": "LA Galaxy",
+        "option_d": "Flamengo",
+        "correct_answer": "A",
+        "difficulty": "easy",
+        "category": "Transfers"
+        },
+        {
+        "question_text": "Who is the all-time top scorer for the France national team?",
+        "option_a": "Henry",
+        "option_b": "Mbappé",
+        "option_c": "Giroud",
+        "option_d": "Platini",
+        "correct_answer": "C",
+        "difficulty": "medium",
+        "category": "Players"
+        },
+        {
+        "question_text": "Which goalkeeper has the record for most penalty saves in Champions League history?",
+        "option_a": "Neuer",
+        "option_b": "Casillas",
+        "option_c": "Oblak",
+        "option_d": "Buffon",
+        "correct_answer": "B",
+        "difficulty": "hard",
+        "category": "Champions League"
+        },
+        {
+        "question_text": "Which club won the 2010 FIFA Club World Cup?",
+        "option_a": "Bayern Munich",
+        "option_b": "Barcelona",
+        "option_c": "Inter Milan",
+        "option_d": "Manchester United",
+        "correct_answer": "C",
+        "difficulty": "medium",
+        "category": "Club World Cup"
+        },
+        {
+        "question_text": "Which country won the first UEFA Nations League in 2019?",
+        "option_a": "Portugal",
+        "option_b": "Spain",
+        "option_c": "France",
+        "option_d": "Netherlands",
+        "correct_answer": "A",
+        "difficulty": "easy",
+        "category": "International"
+        },
+        {
+        "question_text": "Which team plays at the stadium called 'La Bombonera'?",
+        "option_a": "River Plate",
+        "option_b": "Boca Juniors",
+        "option_c": "Flamengo",
+        "option_d": "Santos",
+        "correct_answer": "B",
+        "difficulty": "medium",
+        "category": "Stadiums"
+        },
+        {
+        "question_text": "Which English club has won the most FA Cups?",
+        "option_a": "Liverpool",
+        "option_b": "Arsenal",
+        "option_c": "Manchester United",
+        "option_d": "Chelsea",
+        "correct_answer": "B",
+        "difficulty": "easy",
+        "category": "FA Cup"
+        },
+        {
+        "question_text": "Which player won the Golden Boot in Euro 2020?",
+        "option_a": "Ronaldo",
+        "option_b": "Schick",
+        "option_c": "Kane",
+        "option_d": "Lukaku",
+        "correct_answer": "A",
+        "difficulty": "medium",
+        "category": "Euro Cup"
+        },
+        {
+        "question_text": "Which team is nicknamed 'The Foxes'?",
+        "option_a": "Everton",
+        "option_b": "Leicester City",
+        "option_c": "Wolves",
+        "option_d": "Brentford",
+        "correct_answer": "B",
+        "difficulty": "easy",
+        "category": "Premier League"
+        },
+        {
+        "question_text": "Which country hosted the 1970 World Cup?",
+        "option_a": "Mexico",
+        "option_b": "Brazil",
+        "option_c": "Argentina",
+        "option_d": "Germany",
+        "correct_answer": "A",
+        "difficulty": "medium",
+        "category": "World Cup"
+        },
+        {
+        "question_text": "Which club has won the most Serie A titles?",
+        "option_a": "AC Milan",
+        "option_b": "Inter Milan",
+        "option_c": "Juventus",
+        "option_d": "Roma",
+        "correct_answer": "C",
+        "difficulty": "easy",
+        "category": "Serie A"
+        },
+        {
+        "question_text": "Which country won AFCON 2022?",
+        "option_a": "Egypt",
+        "option_b": "Senegal",
+        "option_c": "Nigeria",
+        "option_d": "Ivory Coast",
+        "correct_answer": "B",
+        "difficulty": "medium",
+        "category": "AFCON"
+        },
+        {
+        "question_text": "Which team won the La Liga title in 2014?",
+        "option_a": "Real Madrid",
+        "option_b": "Barcelona",
+        "option_c": "Atletico Madrid",
+        "option_d": "Valencia",
+        "correct_answer": "C",
+        "difficulty": "medium",
+        "category": "La Liga"
+        },
+        {
+        "question_text": "Who scored the famous 'Panenka' penalty in Euro 1976?",
+        "option_a": "Franz Beckenbauer",
+        "option_b": "Antonín Panenka",
+        "option_c": "Gerd Müller",
+        "option_d": "Michel Platini",
+        "correct_answer": "B",
+        "difficulty": "easy",
+        "category": "History"
+        },
+        {
+        "question_text": "Which Senegalese player won the 2021 African Player of the Year?",
+        "option_a": "Mané",
+        "option_b": "Koulibaly",
+        "option_c": "Mahrez",
+        "option_d": "Salah",
+        "correct_answer": "A",
+        "difficulty": "medium",
+        "category": "Awards"
+        },
+        {
+        "question_text": "Which club did Kevin De Bruyne play for before Manchester City?",
+        "option_a": "Wolfsburg",
+        "option_b": "Chelsea",
+        "option_c": "Werder Bremen",
+        "option_d": "Genk",
+        "correct_answer": "A",
+        "difficulty": "medium",
+        "category": "Transfers"
+        },
+        {
+        "question_text": "Which team won the Bundesliga in 2012?",
+        "option_a": "Bayern Munich",
+        "option_b": "Dortmund",
+        "option_c": "Leverkusen",
+        "option_d": "Schalke",
+        "correct_answer": "B",
+        "difficulty": "medium",
+        "category": "Bundesliga"
+        },
+        {
+        "question_text": "Which country reached the 2018 World Cup final for the first time?",
+        "option_a": "Croatia",
+        "option_b": "Belgium",
+        "option_c": "Portugal",
+        "option_d": "Colombia",
+        "correct_answer": "A",
+        "difficulty": "easy",
+        "category": "World Cup"
+        },
+        {
+        "question_text": "Which team is known as 'The Eagles'?",
+        "option_a": "Benfica",
+        "option_b": "Lazio",
+        "option_c": "Crystal Palace",
+        "option_d": "All of them",
+        "correct_answer": "D",
+        "difficulty": "hard",
+        "category": "Clubs"
+        },
+        {
+        "question_text": "Which country won the FIFA Women's World Cup in 2011?",
+        "option_a": "USA",
+        "option_b": "Japan",
+        "option_c": "Germany",
+        "option_d": "Brazil",
+        "correct_answer": "B",
+        "difficulty": "medium",
+        "category": "Women's Football"
+        },
+        {
+        "question_text": "Which Spanish club won the Europa League in 2021?",
+        "option_a": "Sevilla",
+        "option_b": "Villarreal",
+        "option_c": "Atletico Madrid",
+        "option_d": "Real Betis",
+        "correct_answer": "B",
+        "difficulty": "medium",
+        "category": "Europa League"
+        },
+        {
+        "question_text": "Which player is famous for the quote 'Why always me?'",
+        "option_a": "Balotelli",
+        "option_b": "Ibrahimović",
+        "option_c": "Benzema",
+        "option_d": "Pogba",
+        "correct_answer": "A",
+        "difficulty": "easy",
+        "category": "Players"
+        },
+        {
+        "question_text": "Which club did David Beckham join after leaving Real Madrid?",
+        "option_a": "PSG",
+        "option_b": "LA Galaxy",
+        "option_c": "Manchester United",
+        "option_d": "Milan",
+        "correct_answer": "B",
+        "difficulty": "easy",
+        "category": "Transfers"
+        },
+        {
+        "question_text": "Which team won Copa Libertadores 2018 after the Madrid final?",
+        "option_a": "River Plate",
+        "option_b": "Boca Juniors",
+        "option_c": "Palmeiras",
+        "option_d": "Flamengo",
+        "correct_answer": "A",
+        "difficulty": "medium",
+        "category": "Copa Libertadores"
+        },
+        {
+        "question_text": "Which Italian defender was known as 'The Wall'?",
+        "option_a": "Cannavaro",
+        "option_b": "Chiellini",
+        "option_c": "Nesta",
+        "option_d": "Maldini",
+        "correct_answer": "C",
+        "difficulty": "hard",
+        "category": "Players"
+        },
+        {
+        "question_text": "Who won the Golden Glove at the 2010 World Cup?",
+        "option_a": "Casillas",
+        "option_b": "Neuer",
+        "option_c": "Stekelenburg",
+        "option_d": "Howard",
+        "correct_answer": "A",
+        "difficulty": "medium",
+        "category": "World Cup"
+        },
+        {
+        "question_text": "Which team did Zlatan Ibrahimović join in 2018?",
+        "option_a": "LA Galaxy",
+        "option_b": "PSG",
+        "option_c": "Manchester United",
+        "option_d": "Ajax",
+        "correct_answer": "A",
+        "difficulty": "easy",
+        "category": "Transfers"
+        },
+        {
+        "question_text": "Which country hosted Euro 1988?",
+        "option_a": "West Germany",
+        "option_b": "Netherlands",
+        "option_c": "Belgium",
+        "option_d": "Spain",
+        "correct_answer": "A",
+        "difficulty": "hard",
+        "category": "Euro Cup"
+        },
+        {
+        "question_text": "Which club is known as 'The Reds'?",
+        "option_a": "Liverpool",
+        "option_b": "Manchester United",
+        "option_c": "Arsenal",
+        "option_d": "Nottingham Forest",
+        "correct_answer": "A",
+        "difficulty": "easy",
+        "category": "Premier League"
+        },
+        
+
 ]
 
 
