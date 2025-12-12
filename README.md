@@ -1,194 +1,169 @@
-# Higher or Lower – Football Edition
+# Football Games – Higher or Lower & Trivia
 
-Учебный университетский проект на FastAPI: веб‑приложение в стиле
-"Higher or Lower" для сравнения статистики футболистов.
+![CI](https://github.com/54mhd/football-higher-lower/actions/workflows/ci.yml/badge.svg)
 
-## Цель проекта
+A FastAPI web application featuring two games:
+- Higher or Lower: compare two football players by a single stat
+- Football Trivia: multiple‑choice quiz with categories and difficulty
 
-Приложение показывает двух игроков и предлагает пользователю угадать,
-у кого статистика (`stat_value`) выше. Логика упрощена до сравнения
-одного числового показателя.
+## Project Goal
 
-## Технологии
+Present two players and let the user guess who has the higher `stat_value`. The logic is simplified to comparing one numeric metric. Additionally, offer a trivia quiz with four options per question.
+
+## Tech Stack
 
 - FastAPI (backend)
-- SQLite (`test.db`) через SQLAlchemy async
-- HTML + JavaScript (frontend без фреймворков)
+- SQLite (`test.db`) via SQLAlchemy async
+- HTML + JavaScript (no frontend framework)
 - Docker, docker-compose
 - GitHub Actions (CI)
 
-## Структура проекта
+## Project Structure
 
 ```text
 project/
-├── .env
-├── .git/
-├── .gitignore
-├── .python-version
-├── .venv/
 ├── app/
-│   ├── app.py           # FastAPI-приложение, маршруты, middleware, CORS
+│   ├── app.py           # FastAPI app, routes, CORS, middleware
 │   ├── db/
-│   │   ├── init_db.py   # Скрипт инициализации и заполнения БД
-│   │   └── seed_players.sql  # SQL-скрипт с начальными записями
-│   ├── db.py            # Модель Player и конфигурация SQLite/SQLAlchemy
-│   ├── images.py        # Инициализация клиента ImageKit (пример работы с .env)
-│   ├── __pycache__/
-│   ├── schema.py        # Pydantic‑модели (I/O схемы API)
+│   │   ├── init_db.py   # Initialize and seed players
+│   │   └── seed_players.sql
+│   ├── db.py            # SQLAlchemy models and DB config
+│   ├── images.py        # ImageKit example client (optional)
+│   ├── schema.py        # Pydantic schemas (API I/O)
 │   └── services/
-│       ├── game_services.py  # Бизнес‑логика игры (random, verify)
-│       └── __pycache__/
-├── index.html           # Простой HTML/JS‑frontend
-├── main.py              # Точка входа для локального dev‑запуска (uvicorn)
-├── pyproject.toml       # Зависимости и метаданные проекта
-├── README.md            # Это описание проекта
-├── test.db              # Локальная SQLite‑БД (dev)
-├── uv.lock              # Lock‑файл менеджера uv
+│       ├── game_services.py  # Higher or Lower logic
+│       ├── trivia_services.py# Trivia logic
+│       └── player_importer.py
+├── index.html           # Game selection menu (home)
+├── game.html            # Higher or Lower UI
+├── trivia.html          # Trivia UI
+├── main.py              # Dev entry point (uvicorn)
+├── pyproject.toml       # Dependencies & metadata
+├── README.md            # This documentation
+├── test.db              # SQLite DB (dev)
+├── uv.lock              # uv lockfile (if using uv)
 ├── tests/
 │   ├── __init__.py
-│   ├── test_api.py      # Тесты API‑эндпоинтов
-│   ├── test_db.py       # Тесты работы с БД
-│   └── test_services.py # Тесты сервисного слоя
+│   └── test_app.py      # API and service tests
 ├── Dockerfile
 ├── docker-compose.yml
 └── .github/
-    └── workflows/
-        └── ci.yml       # CI: тесты и сборка Docker‑образа
+  └── workflows/
+    └── ci.yml       # CI: tests and Docker build
 ```
 
-## Архитектура backend
+## Backend Architecture
 
 - `app/app.py`
-  - Создание объекта `FastAPI`.
-  - Подключение CORS (`CORSMiddleware`) для доступа с фронтенда.
-  - Middleware логирования времени обработки запроса.
-  - Эндпоинты:
-    - `GET /health` — проверка работоспособности сервиса.
-    - `GET /` — отдаёт `index.html` или fallback‑страницу.
-    - `GET /api/player/random` — возвращает двух случайных игроков.
-    - `POST /api/game/verify` — проверяет угадывание пользователя.
+  - FastAPI app instance
+  - CORS via `CORSMiddleware`
+  - Request timing middleware
+  - Endpoints:
+    - `GET /health`
+    - `GET /` → serves `index.html`
+    - `GET /game` → serves `game.html`
+    - `GET /trivia` → serves `trivia.html`
+    - `GET /api/player/random`
+    - `POST /api/game/verify`
+    - `GET /api/trivia/question`
+    - `POST /api/trivia/verify`
 
 - `app/db.py`
-  - Конфигурация SQLite через SQLAlchemy async.
-  - URL берётся из переменной окружения `DATABASE_URL` или
-    по умолчанию `sqlite+aiosqlite:///./test.db`.
-  - Модель `Player`:
-    - `id: int` (PK, autoincrement)
-    - `name: str`
-    - `image_url: str`
-    - `stat_value: int`
-  - Функции:
-    - `create_db_and_tables()` — создание схемы БД.
-    - `get_async_session()` — зависимость FastAPI для получения
-      `AsyncSession`.
+  - SQLite via SQLAlchemy async
+  - `DATABASE_URL` env var or default `sqlite+aiosqlite:///./test.db`
+  - Models:
+    - `Player(id, name, image_url, stat_value)`
+    - `Question(id, question_text, option_a, option_b, option_c, option_d, correct_answer, difficulty, category)`
+  - Helpers:
+    - `create_db_and_tables()`
+    - `get_async_session()` → FastAPI dependency for `AsyncSession`
 
 - `app/db/init_db.py`
-  - Скрипт инициализации БД и заполнения несколькими игроками.
-  - Используется как утилита и вызывается внутри Dockerfile.
+  - Initialize DB and seed sample players
+  - Used locally and in Docker builds
 
 - `app/db/seed_players.sql`
-  - Альтернативный SQL‑скрипт вставки начальных игроков в таблицу.
+  - Optional SQL seed script for players
 
 - `app/schema.py`
-  - `PlayerOut` — публичная модель игрока.
-  - `RandomPlayersResponse` — ответ `GET /api/player/random`.
-  - `VerifyRequest` — тело запроса `POST /api/game/verify`.
-  - `VerifyResponse` — результат проверки угадывания.
-  - `HealthResponse` — модель для `/health`.
+  - Higher or Lower: `PlayerOut`, `RandomPlayersResponse`, `VerifyRequest`, `VerifyResponse`
+  - Trivia: `QuestionOut`, `RandomQuestionResponse`, `TriviaVerifyRequest`, `TriviaVerifyResponse`
+  - Common: `HealthResponse`
 
 - `app/services/game_services.py`
-  - Инкапсулирует бизнес‑логику.
-  - `get_two_random_players(session)` — выбирает двух случайных
-    игроков через `ORDER BY RANDOM()` в SQLite.
-  - `verify_guess(session, payload)` —
-    - Загружает двух игроков по ID.
-    - Сравнивает их `stat_value`.
-    - Возвращает `correct`, `left_value`, `right_value`.
+  - `get_two_random_players(session)` → select two random players
+  - `verify_guess(session, payload)` → compare `stat_value`
 
 ## Frontend
 
-- `index.html` — простой SPA‑подобный интерфейс на чистом JS.
-- Использует `fetch` для запросов к backend:
-  - `GET /api/player/random` для получения двух игроков.
-  - `POST /api/game/verify` для проверки гипотезы пользователя.
-- Отображает:
-  - Имя и аватар каждого игрока.
-  - Кнопки "Left is higher" / "Right is higher".
-  - Счёт и статус последнего ответа.
+- `index.html` — game selection menu (two cards: Higher or Lower, Trivia)
+- `game.html` — Higher or Lower gameplay (two player cards, hidden values, left/right guess)
+- `trivia.html` — Trivia gameplay (question + A/B/C/D options, difficulty, category)
+- Uses `fetch` to call backend endpoints
 
-## Безопасность и конфигурация
+## Security & Configuration
 
-- CORS включён через `CORSMiddleware` (по умолчанию разрешены все
-  источники — для учебных целей; в проде следует сузить список).
-- Валидация входных данных выполняется через Pydantic‑модели
-  (`VerifyRequest`).
-- Переменные окружения загружаются из `.env` при помощи `python-dotenv`.
-  Основные переменные:
-  - `DATABASE_URL` — строка подключения к SQLite (или другой БД).
-  - Ключи для `imagekit` в `app/images.py` (опционально).
+- CORS enabled via `CORSMiddleware` (allow‑all for dev; restrict in prod)
+- Input validation via Pydantic models
+- Env vars from `.env` using `python-dotenv`
+  - `DATABASE_URL` for SQLite/other DB
+  - Optional ImageKit keys in `app/images.py`
 
-## Запуск локально (без Docker)
+## Local Run (without Docker)
 
-### 1. Установка зависимостей
-
-```bash
-uv sync
-```
-
-или (если `uv` не используется):
+### 1. Install dependencies
 
 ```bash
 pip install -e .
 ```
 
-### 2. Инициализация БД
+### 2. Initialize database (players)
 
 ```bash
-uv run python -m app.db.init_db
+python -m app.db.init_db
 ```
 
-### 3. Запуск dev‑сервера
+Additionally (Trivia questions):
 
 ```bash
-uv run python main.py
+python -m app.db_init_trivia
 ```
 
-Приложение будет доступно по адресу `http://localhost:8000`.
+### 3. Start dev server
 
-## Запуск через Docker
+```bash
+python main.py
+```
 
-### 1. Сборка образа
+App will be available at `http://localhost:8000`.
+Home page: game selection (Higher or Lower / Trivia).
+
+## Run via Docker
+
+### 1. Build image
 
 ```bash
 docker build -t higher-lower-app .
 ```
 
-### 2. Запуск контейнера
+### 2. Run container
 
 ```bash
 docker-compose up --build
 ```
 
-- Backend доступен на `http://localhost:8000`.
-- SQLite хранится в volume `./data`, чтобы данные не терялись при
-  перезапуске контейнера.
-- Сервер в контейнере — `gunicorn` с воркером `uvicorn`.
+- Backend at `http://localhost:8000`
+- SQLite persisted via volume (e.g. `./data`)
+- Container server: `gunicorn` with `uvicorn` worker
 
-## Тестирование
+## Testing
 
-Тесты написаны на `pytest` и покрывают:
+Tests use `pytest` and cover:
+- Service logic (Higher or Lower)
+- API endpoints availability and correctness
+- DB initialization & CRUD
 
-- `tests/test_services.py` — логику сервиса `GameService`.
-- `tests/test_api.py` — доступность и корректность API‑эндпоинтов.
-- `tests/test_db.py` — создание таблиц и простые CRUD‑операции.
-
-Запуск тестов:
-
-```bash
-uv run pytest
-```
-
-или
+Run tests:
 
 ```bash
 pytest
@@ -196,13 +171,86 @@ pytest
 
 ## CI/CD (GitHub Actions)
 
-Workflow `.github/workflows/ci.yml` выполняет:
+Workflow `.github/workflows/ci.yml` performs:
+1. Set up Python
+2. Install dependencies (`pip install -e .`)
+3. Run tests (`pytest`)
+4. Build Docker image
 
-1. Установку Python.
-2. Установку зависимостей через `uv sync`.
-3. Запуск тестов (`pytest`).
-4. Сборку Docker‑образа.
+Use this pipeline as a base for deployment to any Docker‑compatible hosting.
 
-Этот pipeline можно использовать как основу для дальнейшего деплоя на
-любой Docker‑совместимый хостинг.
+## Games
+
+- Higher or Lower: compare two random players; guess who has higher `stat_value`; score and streak tracking
+- Football Trivia: four options (A/B/C/D), categories and difficulty; score and streak; highlight correct answer
+
+## Quick Start
+
+1. Install deps: `pip install -e .`
+2. Seed players: `python -m app.db.init_db`
+3. Seed trivia (optional): `python -m app.db_init_trivia`
+4. Run server: `python main.py`
+5. Open `http://localhost:8000` and choose a game
+
+Key API endpoints:
+- Higher or Lower: `GET /api/player/random`, `POST /api/game/verify`
+- Trivia: `GET /api/trivia/question`, `POST /api/trivia/verify`
+
+To add more Trivia questions, edit `app/db_init_trivia.py` (`SAMPLE_QUESTIONS`) and re‑run: `python -m app.db_init_trivia`.
+
+## Implementation Summary (from previous docs)
+
+- Added Football Trivia game with multiple‑choice questions
+- Extended DB with `Question` model (id, text, options A–D, correct_answer, difficulty, category)
+- New endpoints: `GET /trivia`, `GET /api/trivia/question`, `POST /api/trivia/verify`
+- Redesigned `index.html` as a game selection menu
+- Responsive UI using Tailwind CSS via CDN
+
+## Feature Highlights
+
+- Random player selection (Higher or Lower)
+- Random question selection (Trivia)
+- Score and streak tracking in both games
+- Difficulty and category displayed in Trivia
+- Immediate feedback; highlights correct answer on wrong selection
+
+## Troubleshooting
+
+- "No questions in the database": run `uv run python -m app.db_init_trivia`
+- Page won’t load: ensure server running at `http://localhost:8000`
+- Buttons not working: clear browser cache or try another browser
+- Styling looks broken: Tailwind via CDN — ensure internet connectivity
+
+## Security
+
+- CORS for dev; restrict origins in prod
+- Pydantic validation for requests
+- SQLAlchemy ORM with async engine
+
+## Future Enhancements
+
+- Leaderboards and user accounts
+- Admin panel for adding questions
+- Question filtering by difficulty/category
+- Timed modes and challenges
+
+Last Updated: December 12, 2025
+
+## Contributing
+
+- Fork the repo and create a feature branch.
+- Keep changes focused; follow existing code style and structure.
+- Add or update tests in `tests/` when changing logic or endpoints.
+- Run locally and ensure both games work before opening a PR.
+- Open a pull request with a clear description of the change and screenshots (for UI).
+
+Quick checks:
+
+```bash
+pytest
+python -m app.db.init_db
+python -m app.db_init_trivia
+python main.py
+```
+
 
