@@ -123,10 +123,6 @@ async def trivia_page() -> HTMLResponse:
     <p>Please add trivia.html to the project root.</p></body></html>"""
     return HTMLResponse(content=html)
 
-@app.head("/api/player/random")
-async def head_player_random():
-    return
-
 @app.get("/api/player/random", response_model=RandomPlayersResponse)
 async def get_random_players(
     session: AsyncSession = Depends(get_async_session),
